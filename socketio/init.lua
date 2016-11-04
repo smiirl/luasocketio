@@ -6,8 +6,14 @@ local manager = require("socketio.manager")
 local socket = require("socketio.socket")
 local socket_url = require("socket.url")
 
+-- Cache of opened managers
 local manager_cache = {}
 
+--- Lookup/connect for a given URL, and returns a socket for this URL. A manager
+-- is automatically instantiated if it did not exist or forced.
+-- @param url URL to connect to.
+-- @param opts Options. See @{socketio.manager.new}.
+-- @return An instance of @{socketio.socket}.
 local function lookup(url, opts)
     opts = opts or {}
 
