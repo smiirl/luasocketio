@@ -1,9 +1,9 @@
--- Logging management
+--- Logging management.
 --
 -- Provides three levels of logging, WARNING, INFO and DEBUG. By default, only
--- WARNING messages are printed. This behaviour can be modified thanks to the
--- variable 'level'. The variable 'printer' is by default 'print', but can be
--- overwritten to redirect the log stream.
+-- WARNING messages are printed.
+--
+-- @module socketio.log
 
 local C = {}
 
@@ -18,17 +18,28 @@ for value, name in ipairs(levels) do
     levels[name] = value
 end
 
-C.printer = print
+local global_printer = print
 
 local global_level = C.WARNING
 
-function C.set_level(l)
-    global_level = l
+--- Set a printer function. By default, set to 'print'.
+-- @param printer printer function to set
+function C.set_printer(printer)
+    global_printer = printer
 end
 
+--- Set logger level. By default, set to 'WARNING'.
+-- @param level Level to set
+function C.set_level(level)
+    global_level = level
+end
+
+--- Main log function
+-- @param level Log level
+-- @param ... string.format() parameters
 function C.log(level, ...)
     if global_level >= level then
-        C.printer(
+        global_printer(
             "luasocketio",
             levels[level],
             string.format(...)
@@ -36,9 +47,17 @@ function C.log(level, ...)
     end
 end
 
-C.warn  = function(...) return C.log(C.WARNING, ...) end
-C.info  = function(...) return C.log(C.INFO, ...) end
-C.debug = function(...) return C.log(C.DEBUG, ...) end
+--- Log a warning log.
+-- @param ... string.format parameters
+function C.warn(...) return C.log(C.WARNING, ...) end
+
+--- Log a info log.
+-- @param ... string.format parameters
+function C.info(...) return C.log(C.INFO, ...) end
+
+--- Log a debug log.
+-- @param ... string.format parameters
+function C.debug(...) return C.log(C.DEBUG, ...) end
 
 return C
 

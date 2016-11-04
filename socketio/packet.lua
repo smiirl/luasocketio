@@ -1,5 +1,9 @@
+--- socket.io packet encoding/decoding methods
+-- @module socketio.packet
+
 local cjson_safe = require("cjson.safe")
 
+--- Engine.IO protocol version constant
 local ENGINEIO_PROTOCOL_VERSION = 3
 
 local function build_packet_table(t)
@@ -14,6 +18,7 @@ local function build_packet_table(t)
     return r
 end
 
+-- Engine.IO packet types
 local engineio_packet_types = build_packet_table{
     "open",
     "close",
@@ -24,6 +29,7 @@ local engineio_packet_types = build_packet_table{
     "noop",
 }
 
+-- Socket.IO packet types
 local socketio_packet_types = build_packet_table{
     "connect",
     "disconnect",
@@ -34,11 +40,15 @@ local socketio_packet_types = build_packet_table{
     "binary_ack",
 }
 
+-- Engine.IO packets whose body are encoded in JSON.
 local json_body_engineio_packet_types = {
     open = true,
     message = true,
 }
 
+--- Decode a engine.io/socket.io packet.
+-- @param s string encoding a packet.
+-- @return a table representing the packet.
 local function decode(s)
     local r = {}
     local idx = 1
@@ -109,6 +119,9 @@ local function decode(s)
     return true, r
 end
 
+--- Encode a engine.io/socket.io packet.
+-- @param pkt a table representing a packet.
+-- @return string encoding the packet.
 local function encode(pkt)
     local r = {}
 
@@ -160,6 +173,9 @@ local function encode(pkt)
     return true, table.concat(r)
 end
 
+--- Returns a human representation of a packet.
+-- @param pkt A packet.
+-- @return A human representation of the packet.
 local function tostring(pkt)
     local t = {}
 
