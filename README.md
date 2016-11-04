@@ -1,6 +1,7 @@
 # `luasocketio`
 
-[socket.io](http://socket.io/) client implemented in pure [Lua](https://www.lua.org/).
+[socket.io](http://socket.io/) client implemented in pure
+[Lua](https://www.lua.org/).
 
 Depends on
 
@@ -12,11 +13,18 @@ Depends on
 
 ## Documentation
 
-Code documentation can be generated thanks to [`LDoc`](http://stevedonovan.github.io/ldoc/).
+Code documentation can be generated thanks to
+[`LDoc`](http://stevedonovan.github.io/ldoc/).
 
 ```bash
 $ ldoc socketio/
 output written to /luasocketio/doc
 $ open doc/index.html
 ```
+
+## About the current transports
+
+For now, it only implements the `polling` protocol, which long-polls the
+socket.io server to receive new events. The common protocol `websocket` should
+be the next step of the development of this library.
 
