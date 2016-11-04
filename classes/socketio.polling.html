@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/socketio.backoff.html">socketio.backoff</a></li>
+  <li><a href="../classes/socketio.manager.html">socketio.manager</a></li>
+  <li><strong>socketio.polling</strong></li>
+  <li><a href="../classes/socketio.socket.html">socketio.socket</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/init.html">init</a></li>
+  <li><a href="../modules/socketio.log.html">socketio.log</a></li>
+  <li><a href="../modules/socketio.packet.html">socketio.packet</a></li>
+  <li><a href="../modules/socketio.url.html">socketio.url</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>socketio.polling</code></h1>
+<p>socket.io polling transport
+ Most basic transport, HTTP GET long-polling the socket.io's server to receive
+ events and perfoming HTTP POSTs to send.</p>
+<p>
+ Used by <a href="../classes/socketio.manager.html#">socketio.manager</a></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#C.new">C.new (opts)</a></td>
+	<td class="summary">Class constructor.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#socketio.polling:send">socketio.polling:send (self, pkt)</a></td>
+	<td class="summary">Queue a packet to send to the socket.io server.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.polling:open">socketio.polling:open (self)</a></td>
+	<td class="summary">Open the transport.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.polling:close">socketio.polling:close (self)</a></td>
+	<td class="summary">Close the transport.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.polling:set_session">socketio.polling:set_session (self, session)</a></td>
+	<td class="summary">Set a current session.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.polling:clear_session">socketio.polling:clear_session (self)</a></td>
+	<td class="summary">Clear/Forget the current session.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "C.new"></a>
+    <strong>C.new (opts)</strong>
+    </dt>
+    <dd>
+    Class constructor.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">opts</span> Options given to <a href="../classes/socketio.manager.html#">socketio.manager</a>
+        <ul>
+        <li><span class="parameter">on_packet</span>
+         Function called when a new packet is received. First
+ and unique argument is the still encoded packet. Function will run in its own
+ copas thread.
+        </li>
+        <li><span class="parameter">on_error</span>
+         Function called when an error occurs on the transport
+ level. Function will run in its own copas thread.
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "socketio.polling:send"></a>
+    <strong>socketio.polling:send (self, pkt)</strong>
+    </dt>
+    <dd>
+    Queue a packet to send to the socket.io server.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Already-encoded packet.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.polling:open"></a>
+    <strong>socketio.polling:open (self)</strong>
+    </dt>
+    <dd>
+    Open the transport.  Start long-polling the server.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.polling:close"></a>
+    <strong>socketio.polling:close (self)</strong>
+    </dt>
+    <dd>
+    Close the transport.  Stop every communication with the server.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.polling:set_session"></a>
+    <strong>socketio.polling:set_session (self, session)</strong>
+    </dt>
+    <dd>
+    Set a current session.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">session</span> Session information.
+        <ul>
+        <li><span class="parameter">session_id</span>
+         Session ID defined by the server.
+        </li>
+        <li><span class="parameter">ping_timeout</span>
+         Timeout after a unanswered PING, in second,
+ defined by the server.
+        </li>
+        <li><span class="parameter">ping_interval</span>
+         Interval between every PINGs, in second, defined
+ by the server.
+        </li>
+        <li><span class="parameter">upgrades</span>
+         Table of transport upgrade proposed by the server.
+        </li>
+        </li></ul>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.polling:clear_session"></a>
+    <strong>socketio.polling:clear_session (self)</strong>
+    </dt>
+    <dd>
+    Clear/Forget the current session.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.5</a></i>
+<i style="float:right;">Last updated 2016-11-04 14:27:48 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

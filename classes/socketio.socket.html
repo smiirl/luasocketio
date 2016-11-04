@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/socketio.backoff.html">socketio.backoff</a></li>
+  <li><a href="../classes/socketio.manager.html">socketio.manager</a></li>
+  <li><a href="../classes/socketio.polling.html">socketio.polling</a></li>
+  <li><strong>socketio.socket</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/init.html">init</a></li>
+  <li><a href="../modules/socketio.log.html">socketio.log</a></li>
+  <li><a href="../modules/socketio.packet.html">socketio.packet</a></li>
+  <li><a href="../modules/socketio.url.html">socketio.url</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>socketio.socket</code></h1>
+<p>socket.io class</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#H.ack">H.ack (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'ACK' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.connect">H.connect (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'CONNECT' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.disconnect">H.disconnect (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'DISCONNECT' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.event">H.event (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'EVENT' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.error">H.error (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'ERROR' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#C.new">C.new (manager, path, opts)</a></td>
+	<td class="summary">Class constructor.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:on_packet">socketio.socket:on_packet (self, pkt)</a></td>
+	<td class="summary">Called when a packet is received for the given path/namespace.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:connect">socketio.socket:connect (self)</a></td>
+	<td class="summary">Connect to the socket path.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:disconnect">socketio.socket:disconnect (self)</a></td>
+	<td class="summary">Disconnect to the socket path.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:on">socketio.socket:on (self, name, func)</a></td>
+	<td class="summary">Registers or unregisters an event.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:once">socketio.socket:once (self, name, func)</a></td>
+	<td class="summary">Registers an event once.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:emit">socketio.socket:emit (self, name, ...)</a></td>
+	<td class="summary">Emit an event to the socket.io server.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:send">socketio.socket:send (self, ...)</a></td>
+	<td class="summary">Send a message.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.socket:_fire">socketio.socket:_fire (self, name, ...)</a></td>
+	<td class="summary">Fire an event for the socket.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "H.ack"></a>
+    <strong>H.ack (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'ACK' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'ACK'.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.connect"></a>
+    <strong>H.connect (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'CONNECT' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'CONNECT'.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.disconnect"></a>
+    <strong>H.disconnect (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'DISCONNECT' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'DISCONNECT'.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.event"></a>
+    <strong>H.event (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'EVENT' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'EVENT'.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.error"></a>
+    <strong>H.error (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'ERROR' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'ERROR'.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "C.new"></a>
+    <strong>C.new (manager, path, opts)</strong>
+    </dt>
+    <dd>
+    Class constructor.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">manager</span>
+         Socket's manager. See <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">path</span>
+         Socket's path/namespace.
+        </li>
+        <li><span class="parameter">opts</span>
+         Socket's options. See <a href="../classes/socketio.manager.html#C.new">socketio.manager.new</a>.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        An instance of <a href="../classes/socketio.socket.html#">socketio.socket</a>.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "socketio.socket:on_packet"></a>
+    <strong>socketio.socket:on_packet (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet is received for the given path/namespace.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet for the given socket.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:connect"></a>
+    <strong>socketio.socket:connect (self)</strong>
+    </dt>
+    <dd>
+    Connect to the socket path.  This will notify the server events from this
+ namespace should be sent to the given socket.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:disconnect"></a>
+    <strong>socketio.socket:disconnect (self)</strong>
+    </dt>
+    <dd>
+    Disconnect to the socket path.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:on"></a>
+    <strong>socketio.socket:on (self, name, func)</strong>
+    </dt>
+    <dd>
+    Registers or unregisters an event.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">name</span>
+         Event's name
+        </li>
+        <li><span class="parameter">func</span>
+         Event's function if defined. 'nil' will unregister a previous
+ registered function.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:once"></a>
+    <strong>socketio.socket:once (self, name, func)</strong>
+    </dt>
+    <dd>
+    Registers an event once.  Behaves will <a href="../classes/socketio.socket.html#socketio.socket:on">socketio.socket.on</a> but will
+ unregisters the event automatically before being called, therefore only
+ fireable once.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">name</span>
+         Event's name
+        </li>
+        <li><span class="parameter">func</span>
+         Event's function to be called once.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:emit"></a>
+    <strong>socketio.socket:emit (self, name, ...)</strong>
+    </dt>
+    <dd>
+    Emit an event to the socket.io server.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">name</span>
+         Event's name.
+        </li>
+        <li><span class="parameter">...</span>
+         Arguments of event. If one callback (and only one) is defined in
+ this arguments, the server will be asked to acknowledge the reception of the
+ message, acknowledgement which will call the given function.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:send"></a>
+    <strong>socketio.socket:send (self, ...)</strong>
+    </dt>
+    <dd>
+    Send a message.  This is strictly equivalent to 'emit("message", ...)'. This
+is commonly used as an emulation of a websocket.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">...</span>
+         Message's arguments.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.socket:_fire"></a>
+    <strong>socketio.socket:_fire (self, name, ...)</strong>
+    </dt>
+    <dd>
+    Fire an event for the socket.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance
+        </li>
+        <li><span class="parameter">name</span>
+         Event's name.
+        </li>
+        <li><span class="parameter">...</span>
+         Event's arguments.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.5</a></i>
+<i style="float:right;">Last updated 2016-11-04 14:27:48 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

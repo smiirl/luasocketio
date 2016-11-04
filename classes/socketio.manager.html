@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/socketio.backoff.html">socketio.backoff</a></li>
+  <li><strong>socketio.manager</strong></li>
+  <li><a href="../classes/socketio.polling.html">socketio.polling</a></li>
+  <li><a href="../classes/socketio.socket.html">socketio.socket</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/init.html">init</a></li>
+  <li><a href="../modules/socketio.log.html">socketio.log</a></li>
+  <li><a href="../modules/socketio.packet.html">socketio.packet</a></li>
+  <li><a href="../modules/socketio.url.html">socketio.url</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>socketio.manager</code></h1>
+<p>socket.io manager class, handling an active connection with a server.</p>
+<p>
+ Handlers of the engine.io protocol - being the transport protocol, the layer
+ under the socket.io protocol - is defined here. The manager is responsible of
+ the negotiation with the server of the transport to use, and making sure the
+ connection is still active. Sockets for given paths/namespaces can be
+ instantiated here thanks to the method <a href="../classes/socketio.manager.html#socketio.manager:socket">socketio.manager.socket</a> to actually
+ interact with the server.</p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#H.open">H.open (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'OPEN' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.close">H.close (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'CLOSE' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.ping">H.ping (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'PING' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.pong">H.pong (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'PONG' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#H.message">H.message (self, pkt)</a></td>
+	<td class="summary">Called when a packet 'MESSAGE' is received</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#C.new">C.new (url, opts)</a></td>
+	<td class="summary">Class constructor.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#socketio.manager:on">socketio.manager:on (self, name, func)</a></td>
+	<td class="summary">Registers or unregisters an callback to a given event</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.manager:packet">socketio.manager:packet (self, pkt)</a></td>
+	<td class="summary">Send a packet to the server.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.manager:open">socketio.manager:open (self)</a></td>
+	<td class="summary">Open the transport.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.manager:close">socketio.manager:close (self)</a></td>
+	<td class="summary">Close the manager.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.manager:reconnect">socketio.manager:reconnect (self)</a></td>
+	<td class="summary">Reconnect to the server (close and open back).</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#socketio.manager:socket">socketio.manager:socket (self, path)</a></td>
+	<td class="summary">Returns a socket instance for a given path.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "H.open"></a>
+    <strong>H.open (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'OPEN' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'OPEN'.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.close"></a>
+    <strong>H.close (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'CLOSE' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'CLOSE'
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.ping"></a>
+    <strong>H.ping (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'PING' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'PING'
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.pong"></a>
+    <strong>H.pong (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'PONG' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'PONG'
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "H.message"></a>
+    <strong>H.message (self, pkt)</strong>
+    </dt>
+    <dd>
+    Called when a packet 'MESSAGE' is received
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">pkt</span>
+         Packet 'MESSAGE'
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "C.new"></a>
+    <strong>C.new (url, opts)</strong>
+    </dt>
+    <dd>
+    Class constructor.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">url</span>
+         socket.io URL.
+        </li>
+        <li><span class="parameter">opts</span> Global options, that sockets and transports will inherit.
+        <ul>
+        <li><span class="parameter">reconnection_delay</span>
+         Time in seconds to wait before attempting a
+ reonnection to the server. Default value is 1s.
+        </li>
+        <li><span class="parameter">reconnection_delay_max</span>
+         Maximum time in seconds to wait before
+ attempting a reconnection to the server. Default value is 5s.
+        </li>
+        <li><span class="parameter">randomization_factor</span>
+         Random factor to apply to time to wait
+ before reconnection (jitter). Default value is 50%.
+        </li>
+        <li><span class="parameter">proxy</span>
+         If defined, URL to HTTP proxy to use. Default value is nil.
+        </li>
+        <li><span class="parameter">auto_connect</span>
+         If true, automatically connect a socket when
+ instantiated. Default value is true.
+        </li>
+        </li></ul>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        An instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "socketio.manager:on"></a>
+    <strong>socketio.manager:on (self, name, func)</strong>
+    </dt>
+    <dd>
+    Registers or unregisters an callback to a given event
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">name</span>
+         An event name
+        </li>
+        <li><span class="parameter">func</span>
+         The function to link to the event if defined. 'nil' would mean to
+ unregister a previous registered function.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.manager:packet"></a>
+    <strong>socketio.manager:packet (self, pkt)</strong>
+    </dt>
+    <dd>
+    Send a packet to the server.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">pkt</span>
+         The packet to be sent.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.manager:open"></a>
+    <strong>socketio.manager:open (self)</strong>
+    </dt>
+    <dd>
+    Open the transport.  A connection will be opened to the server. When the
+ manager is effectively opened, the event 'open' will be fired.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.manager:close"></a>
+    <strong>socketio.manager:close (self)</strong>
+    </dt>
+    <dd>
+    Close the manager.  This closes the current session, if defined, and the
+ connection with the server, if existed.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.manager:reconnect"></a>
+    <strong>socketio.manager:reconnect (self)</strong>
+    </dt>
+    <dd>
+    Reconnect to the server (close and open back).
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "socketio.manager:socket"></a>
+    <strong>socketio.manager:socket (self, path)</strong>
+    </dt>
+    <dd>
+    Returns a socket instance for a given path.  If no socket for a given path
+ exists, one socket is instantiated, registered and returned. Socket is
+ automatically connected to the path if the option 'auto_connect' is true.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">self</span>
+         instance of <a href="../classes/socketio.manager.html#">socketio.manager</a>.
+        </li>
+        <li><span class="parameter">path</span>
+         Path of the socket to get.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Instance of <a href="../classes/socketio.socket.html#">socketio.socket</a>.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.5</a></i>
+<i style="float:right;">Last updated 2016-11-04 14:27:48 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
